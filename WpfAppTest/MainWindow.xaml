@@ -6,24 +6,24 @@
         xmlns:local="clr-namespace:WpfAppTest"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <Rectangle  Width="400"  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2">
+    <Grid>
+        <Rectangle  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2" Margin="117,110,427,109">
             <Rectangle.Fill>
                 <LinearGradientBrush>
-                    <GradientStop Color ="AntiqueWhite" Offset="0"/>
+                    <GradientStop Color ="SeaGreen" Offset="0"/>
                     <GradientStop Color ="Gold" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle Width="400"  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2">
+        <Rectangle  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2" Margin="365,110,196,109">
             <Rectangle.Fill>
                 <LinearGradientBrush>
                     <GradientStop Color ="Chocolate" Offset="0"/>
                     <GradientStop Color ="BlueViolet" Offset="1"/>
                 </LinearGradientBrush>
-            </Rectangle.Fill> 
+            </Rectangle.Fill>
         </Rectangle>
 
-    </StackPanel>
+    </Grid>
 </Window>
