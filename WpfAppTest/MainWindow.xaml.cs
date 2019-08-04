@@ -24,5 +24,27 @@ namespace WpfAppTest
         {
             InitializeComponent();
         }
+
+        //Обработчики событиий 
+        
+        /// <summary>
+        /// При наведении курсова мыши на область
+        /// </summary>
+        /// <param name="sende"></param>
+        /// <param name="e"></param>
+        private void MouseEnter1(object sende, MouseEventArgs e)
+        {
+            (sende as Rectangle).Fill = Brushes.MediumPurple;
+        }
+        /// <summary>
+        /// При выводе курсора мыши из области. 
+        /// </summary>
+        /// <param name="sende"></param>
+        /// <param name="e"></param>
+        private void MouseEnter2(object sende, MouseEventArgs e)
+        {
+           (sende as Rectangle).Fill = Brushes.Gold;
+          // (sende as Rectangle).Fill = Brushes.Transparent;
+        }
     }
 }

@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Rectangle Fill="Aqua" Width="100"  Height="200">
+        <Rectangle  Width="400"  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color ="AntiqueWhite" Offset="0"/>
+                    <GradientStop Color ="Gold" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle Width="100"  Height="200">
+        <Rectangle Width="400"  Height="200" MouseEnter="MouseEnter1" MouseLeave="MouseEnter2">
             <Rectangle.Fill>
                 <LinearGradientBrush>
                     <GradientStop Color ="Chocolate" Offset="0"/>
