@@ -10,5 +10,14 @@
         <Rectangle Fill="Aqua" Width="100"  Height="200">
         </Rectangle>
 
+        <Rectangle Width="100"  Height="200">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color ="Chocolate" Offset="0"/>
+                    <GradientStop Color ="BlueViolet" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill> 
+        </Rectangle>
+
     </StackPanel>
 </Window>
