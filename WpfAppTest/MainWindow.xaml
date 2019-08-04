@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfAppTest"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Rectangle Fill="Aqua" Width="100"  Height="200">
+        </Rectangle>
+
+    </StackPanel>
 </Window>
