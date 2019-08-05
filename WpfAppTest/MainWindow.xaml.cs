@@ -46,5 +46,12 @@ namespace WpfAppTest
            (sende as Rectangle).Fill = Brushes.Gold;
           // (sende as Rectangle).Fill = Brushes.Transparent;
         }
+
+        private void ClickTest(object sende, RoutedEventArgs e)
+        {
+            (sende as Rectangle).Fill = Brushes.Gold;
+            // (sende as Rectangle).Fill = Brushes.Transparent;
+        }
+
     }
 }
