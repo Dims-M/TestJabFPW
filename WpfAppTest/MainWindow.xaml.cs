@@ -20,9 +20,12 @@ namespace WpfAppTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        // public PhoneWindow Phone { get; private set; }
+        ApplicationContext db;
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         //Обработчики событиий 
@@ -53,5 +56,18 @@ namespace WpfAppTest
             // (sende as Rectangle).Fill = Brushes.Transparent;
         }
 
+        //Кнопка
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneWindow phoneWindow = new PhoneWindow(); //создаем новый экземпляр окна
+            phoneWindow.Show(); // показать окно
+        }
+
+       //Кнопка просмотра всех товаров
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WindowCatalogProdukt windowCatalogProdukt = new WindowCatalogProdukt();
+            windowCatalogProdukt.Show();
+        }
     }
 }
