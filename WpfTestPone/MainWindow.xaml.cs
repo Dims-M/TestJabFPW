@@ -33,7 +33,7 @@ namespace WpfTestPone
            // db.Phones.Load();
             db2.Catalogs.Load();
             //this.DataContext = db.Phones.Local.ToBindingList();
-            this.DataContext = db2.Catalogs.Local.ToBindingList();
+           // this.DataContext = db2.Catalogs.Local.ToBindingList();
         }
 
             // добавление
@@ -88,10 +88,24 @@ namespace WpfTestPone
                 db.SaveChanges();
             }
 
+        //кнопка показать все товары
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
             window1.Show();
+        }
+
+        //кнопка тест
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            Window2 window2 = new Window2();
+            window2.Show();
+        }
+
+        private void Button_ClickExit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            // MainWindow.Ex
         }
     }
 }

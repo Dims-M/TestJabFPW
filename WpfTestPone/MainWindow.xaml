@@ -15,7 +15,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                       <!-- <TextBlock DataContext="{Binding Path=Company}" Text="{Binding Path=Title}" /> -->
+                        <!-- <TextBlock DataContext="{Binding Path=Company}" Text="{Binding Path=Title}" /> -->
                         <TextBlock Text="{Binding Path=Id}" FontSize="16" />
                         <TextBlock Text="{Binding FullName}" FontSize="16" />
                         <TextBlock Text="{Binding AlcCode}" FontSize="12" />
@@ -29,6 +29,9 @@
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
         </StackPanel>
-        <Button Content="Button" Click="Button_Click" HorizontalAlignment="Left" Margin="65,14.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Получить все товары
+                " Click="Button_Click" HorizontalAlignment="Left" Margin="640,17.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Тест" Click="Button_Click1" HorizontalAlignment="Left" Margin="31,14.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="97"/>
+        <Button Content="Выход" Click="Button_ClickExit" HorizontalAlignment="Left" Margin="536,17.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
