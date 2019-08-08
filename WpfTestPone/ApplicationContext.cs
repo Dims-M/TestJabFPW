@@ -12,10 +12,14 @@ namespace WpfTestPone
         /// <summary>
         /// Связь между программой и БД
         /// </summary>
-        public ApplicationContext() : base("DefaultConnection")
+        public ApplicationContext() : base("DefaultConnection2")
         {
         }
+        //public ApplicationContext() : base("DefaultConnection2")
+        //{
+        //}
         public DbSet<Phone> Phones { get; set; }
+        public DbSet<Catalog> Catalogs { get; set; }
 
     }
 }

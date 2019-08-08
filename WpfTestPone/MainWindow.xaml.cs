@@ -22,14 +22,18 @@ namespace WpfTestPone
     public partial class MainWindow : Window
     {
         ApplicationContext db;
+        ApplicationContext db2;
         public MainWindow()
         {
             InitializeComponent();
             //  InitializeComponent();
 
             db = new ApplicationContext();
-            db.Phones.Load();
-            this.DataContext = db.Phones.Local.ToBindingList();
+            db2 = new ApplicationContext();
+           // db.Phones.Load();
+            db2.Catalogs.Load();
+            //this.DataContext = db.Phones.Local.ToBindingList();
+            this.DataContext = db2.Catalogs.Local.ToBindingList();
         }
 
             // добавление

@@ -20,14 +20,21 @@ namespace WpfTestPone
     public partial class PhoneWindow : Window
     {
         public Phone Phone { get; private set; }
+        public Catalog Catalog { get; private set; }
 
         public PhoneWindow(Phone p)
         {
             InitializeComponent();
             Phone = p;
-            this.DataContext = Phone;
+          //  this.DataContext = Phone;
         }
 
+        public PhoneWindow(Catalog c)
+        {
+            InitializeComponent();
+            Catalog = c;
+            this.DataContext = Catalog;
+        }
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
