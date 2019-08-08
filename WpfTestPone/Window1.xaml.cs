@@ -24,7 +24,7 @@ namespace WpfTestPone
 
         public Window1()
         {
-            db = new ApplicationContext();  
+            db = new ApplicationContext();
             InitializeComponent();
             db.Catalogs.Load(); // Закгрузка все базы в локальный кэш.
             DataContext = db.Catalogs.Local.ToBindingList();
@@ -35,7 +35,16 @@ namespace WpfTestPone
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            
+            PhoneWindow phoneWindow = new PhoneWindow(new Catalog());
+            if (phoneWindow.ShowDialog() == true)
+            {
+                Catalog catalog = phoneWindow.Catalog;
+                db.Catalogs.Add(catalog);
+                db.SaveChanges();
+                // }
+            }
         }
+
+
     }
 }
