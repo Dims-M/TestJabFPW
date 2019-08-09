@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VirusServer
 {
-    public partial class SendMenu : BaseSendMenu
+    public partial class SendMenu : Form
     {
         /// <summary>
         /// Строка для передачи

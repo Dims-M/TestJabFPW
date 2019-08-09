@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.SendButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FirstParameter = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.FirstParameterTextBox = new System.Windows.Forms.TextBox();
+            this.SecondParameterTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // SendButton
             // 
-            this.button1.Location = new System.Drawing.Point(99, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(295, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SendButton.Location = new System.Drawing.Point(99, 231);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(295, 47);
+            this.SendButton.TabIndex = 0;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -63,30 +63,30 @@
             this.label2.Text = "secondParameter";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // FirstParameter
+            // FirstParameterTextBox
             // 
-            this.FirstParameter.Location = new System.Drawing.Point(186, 54);
-            this.FirstParameter.Name = "FirstParameter";
-            this.FirstParameter.Size = new System.Drawing.Size(208, 20);
-            this.FirstParameter.TabIndex = 3;
+            this.FirstParameterTextBox.Location = new System.Drawing.Point(186, 54);
+            this.FirstParameterTextBox.Name = "FirstParameterTextBox";
+            this.FirstParameterTextBox.Size = new System.Drawing.Size(208, 20);
+            this.FirstParameterTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // SecondParameterTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 4;
+            this.SecondParameterTextBox.Location = new System.Drawing.Point(186, 118);
+            this.SecondParameterTextBox.Name = "SecondParameterTextBox";
+            this.SecondParameterTextBox.Size = new System.Drawing.Size(208, 20);
+            this.SecondParameterTextBox.TabIndex = 4;
             // 
             // BaseSendMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 324);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.FirstParameter);
+            this.Controls.Add(this.SecondParameterTextBox);
+            this.Controls.Add(this.FirstParameterTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SendButton);
             this.Name = "BaseSendMenu";
             this.Text = "BaseSendMenu";
             this.ResumeLayout(false);
@@ -96,10 +96,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SendButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox FirstParameter;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox FirstParameterTextBox;
+        private System.Windows.Forms.TextBox SecondParameterTextBox;
     }
 }
