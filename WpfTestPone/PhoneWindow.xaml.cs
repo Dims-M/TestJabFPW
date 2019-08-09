@@ -26,7 +26,7 @@ namespace WpfTestPone
         {
             InitializeComponent();
             Phone = p;
-          //  this.DataContext = Phone;
+           this.DataContext = Phone;
         }
 
         public PhoneWindow(Catalog c)

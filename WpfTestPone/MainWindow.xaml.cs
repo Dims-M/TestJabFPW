@@ -33,7 +33,7 @@ namespace WpfTestPone
            // db.Phones.Load();
             db2.Catalogs.Load();
             //this.DataContext = db.Phones.Local.ToBindingList();
-           // this.DataContext = db2.Catalogs.Local.ToBindingList();
+            this.DataContext = db2.Catalogs.Local.ToBindingList();
         }
 
             // добавление
