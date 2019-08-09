@@ -28,36 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ClientTable = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientTable)).BeginInit();
+            this.clientTable = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // ClientTable
+            // clientTable
             // 
-            this.ClientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientTable.Location = new System.Drawing.Point(12, 12);
-            this.ClientTable.Name = "ClientTable";
-            this.ClientTable.Size = new System.Drawing.Size(542, 179);
-            this.ClientTable.TabIndex = 0;
+            this.clientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientTable.Location = new System.Drawing.Point(12, 12);
+            this.clientTable.Name = "clientTable";
+            this.clientTable.Size = new System.Drawing.Size(542, 179);
+            this.clientTable.TabIndex = 0;
+            this.clientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientTable_CellDoubleClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 215);
-            this.Controls.Add(this.ClientTable);
+            this.Controls.Add(this.clientTable);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ClientTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ClientTable;
+        public System.Windows.Forms.DataGridView clientTable;
     }
 }
 
