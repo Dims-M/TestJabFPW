@@ -14,7 +14,8 @@ using System.Net.Sockets;
 
 namespace VirusServer
 {
-   
+    // https://www.youtube.com/watch?v=CG5eYP3NvuM&t=14s
+    //https://www.youtube.com/watch?v=6rg5M0bBjBk&t=55s
     public partial class Form1 : Form
     {
         public Thread refreshThread; // отдельный поток
