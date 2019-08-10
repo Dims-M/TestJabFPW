@@ -20,6 +20,7 @@ namespace VirusServer
         public Thread refreshThread; // отдельный поток
         public static Socket socket; // обьект для установки соединения
         public static List<Socket> clientList = new List<Socket>(); //лист для хранения клиентов
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer(); //  тайймер
 
 
         public Form1()
@@ -39,6 +40,16 @@ namespace VirusServer
             socket.Listen(10); //Режим прошлушивания сокетом портов и ожидания прихода по ip + очередь
             refreshThread = new Thread(WaitForConnect);
             refreshThread.Start();// запуск метода в отдельном потоке
+
+            //Дата и время
+            timer.Interval = 1000; //интервал секунда
+            timer.Tick += new EventHandler(Timer1_Tick);
+            timer.Start(); //Виснет при закрытии
+
+            timer2.Interval = 1000; //интервал секунда
+            timer2.Tick += new EventHandler(Timer2_Tick);
+            timer2.Start();
+
         }
 
         
@@ -90,6 +101,161 @@ namespace VirusServer
             ClientMenu clientMenu = new ClientMenu();
             clientMenu.socket = cur;
             clientMenu.Show(); // показ окна
+        }
+        int i;
+        //метод работы с таймером
+        /// <summary>
+        /// Дата и время 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            int h = DateTime.Now.Hour;
+            int m = DateTime.Now.Minute;
+            int s = DateTime.Now.Second;
+
+            string time = "";
+            string data = "";
+
+            if (h < 10)
+            {
+                time += "0" + h;
+            }
+            else
+            {
+                time += h;
+            }
+
+            time += ":";
+
+            if (m < 10)
+            {
+                time += "0" + m;
+            }
+            else
+            {
+                time += m;
+            }
+
+            time += ":";
+
+            if (s < 10)
+            {
+                time += "0" + s;
+            }
+            else
+            {
+                time += s;
+            }
+
+            label2.Text = time;
+
+            int day = DateTime.Now.Day;
+            int month = DateTime.Now.Month;
+            int year = DateTime.Now.Year;
+
+            if (day < 10)
+            {
+                data += "0" + day;
+            }
+            else
+            {
+                data += day;
+            }
+            data += ".";
+            if (month < 10)
+            {
+                data += "0" + month;
+            }
+            else
+            {
+                data += month;
+            }
+            data += ".";
+            data += year;
+            label1.Text = data;
+
+            ////Таймер работы програмы
+
+            //i -= 1;
+            //string mm;
+            //string ss;
+            //string hh = (i / 3600).ToString();
+            //if ((i % 3600) / 60 > 9)
+            //{
+            //    mm = ((i % 3600) / 60).ToString();
+            //}
+            //else
+            //{
+            //    mm = "0" + ((i % 3600) / 60).ToString();
+            //}
+            //if ((i % 3600) % 60 > 9)
+            //{
+            //    ss = ((i % 3600) % 60).ToString();
+            //}
+            //else
+            //{
+            //    ss = "0" + ((i % 3600) % 60).ToString();
+            //}
+            //label3.Text = hh + ":" + mm + ":" + ss;
+            //if (i < 0)
+            //    timer1.Stop();
+        }
+
+        private void test()
+        {
+            i = 5400;
+            label3.Text = "1:30:00";
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer1.Start();
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+          
+
+         //   timer2.Enabled = true;
+          //  timer2.Stop();
+            // Close();
+            socket.Close();
+            this.Close();
+        }
+
+        /// <summary>
+        /// Таймер отчета
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            //Таймер работы програмы
+           // i = 5400;
+            i -= 1;
+            string mm;
+            string ss;
+            string hh = (i / 3600).ToString();
+            if ((i % 3600) / 60 > 9)
+            {
+                mm = ((i % 3600) / 60).ToString();
+            }
+            else
+            {
+                mm = "0" + ((i % 3600) / 60).ToString();
+            }
+            if ((i % 3600) % 60 > 9)
+            {
+                ss = ((i % 3600) % 60).ToString();
+            }
+            else
+            {
+                ss = "0" + ((i % 3600) % 60).ToString();
+            }
+            label3.Text = hh + ":" + mm + ":" + ss;
+            //if (i < 0)
+            //    timer1.Stop();
         }
     }
 }
