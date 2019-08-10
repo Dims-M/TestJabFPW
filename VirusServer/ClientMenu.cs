@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace VirusServer
 {
     public partial class ClientMenu : Form
     {
+        /// <summary>
+        /// для передачи из класса ClientMenu
+        /// </summary>
+        public Socket socket;
+
         public ClientMenu()
         {
             InitializeComponent();
@@ -23,6 +30,7 @@ namespace VirusServer
 
             SendMenu sendMenu = new SendMenu();
             sendMenu.Action = buttonPressed.Text; // присвоиваем в переменную сстроки из формы SendMenu
+            sendMenu.socket = socket;
             sendMenu.Show();
         }
     }
