@@ -25,7 +25,7 @@ namespace VirusClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.0.45")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.59")]
         public string IP {
             get {
                 return ((string)(this["IP"]));

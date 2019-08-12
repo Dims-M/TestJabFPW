@@ -25,7 +25,7 @@ namespace VirusServer
         public static Socket socket; // обьект для установки соединения
         public static List<Socket> clientList = new List<Socket>(); //лист для хранения клиентов
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer(); //  тайймер
-
+        string log = "Журнал событий \t\n";
 
         public Form1()
         {
@@ -35,8 +35,13 @@ namespace VirusServer
         //при загрузке формы
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+
+             
+
             IPHostEntry iPHostEntry =  Dns.Resolve(Dns.GetHostName()); // получаем имя текущего компа
-            IPAddress iPAddress = iPHostEntry.AddressList[1]; // получаем айп адркс первого текущего компа
+            IPAddress iPAddress = iPHostEntry.AddressList[0]; // получаем айп адркс первого текущего компа
             int port = 19132;
             IPEndPoint endPoint = new IPEndPoint(iPAddress, port); //nj
             socket = new Socket(SocketType.Stream,ProtocolType.Tcp); // тип сокета и тип протокола свяязи
@@ -54,6 +59,11 @@ namespace VirusServer
             timer2.Tick += new EventHandler(Timer2_Tick);
             timer2.Start();
 
+            }
+            catch (Exception ex)
+            {
+                log += "ex";
+            }
         }
 
         

