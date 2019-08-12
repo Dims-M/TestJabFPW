@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusServer", "VirusServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsTest", "WindowsFormsTest\WindowsFormsTest.csproj", "{4A7FCDA3-2F19-4CE8-A671-6A41F509EE75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsTestServer2", "WindowsFormsTestServer2\WindowsFormsTestServer2.csproj", "{26554F39-826A-429E-9C2B-3776CCE87E38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4A7FCDA3-2F19-4CE8-A671-6A41F509EE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A7FCDA3-2F19-4CE8-A671-6A41F509EE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A7FCDA3-2F19-4CE8-A671-6A41F509EE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26554F39-826A-429E-9C2B-3776CCE87E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26554F39-826A-429E-9C2B-3776CCE87E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26554F39-826A-429E-9C2B-3776CCE87E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26554F39-826A-429E-9C2B-3776CCE87E38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
