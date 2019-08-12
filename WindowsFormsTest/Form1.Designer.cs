@@ -87,6 +87,7 @@
             this.MinimumSize = new System.Drawing.Size(394, 344);
             this.Name = "Form1";
             this.Text = "Отправка картинки";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
