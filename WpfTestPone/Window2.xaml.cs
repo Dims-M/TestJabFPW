@@ -41,7 +41,9 @@ namespace WpfTestPone
             testList3.AddRange(testList1);
             testList3.AddRange(testList2);
 
-            lbMain.ItemsSource = testList3; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
+           // lbMain.ItemsSource = testList3; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
+            lbMain.ItemsSource = new[] { new { lastName ="Иванов", firstName ="Ияван" },
+                                         new { lastName ="Петров", firstName ="Петр" }}; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
         }
     }
 }
