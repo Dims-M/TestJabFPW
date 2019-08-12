@@ -19,6 +19,7 @@ namespace VirusServer
     //https://metanit.com/sharp/net/3.2.php
     //https://www.youtube.com/watch?v=ZRGgBtUgJKE&t=1290s
     // https://habr.com/ru/post/462379/
+    //192.168.0.45 порт 19132
     public partial class Form1 : Form
     {
         public Thread refreshThread; // отдельный поток
