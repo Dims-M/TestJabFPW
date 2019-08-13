@@ -23,7 +23,7 @@ namespace WindowsFormsTest
         private byte[] buffer; //буфер для хранения полученной через стим и соукеты инфы
         MemoryStream stream; //Создает поток, резервным хранилищем которого является память.
         int port = 19132;
-        string ip = "192.168.0.45";  
+        string ip = "92.168.0.45";  // 192.168.1.95 //92.168.0.45
         string log = "Журнал событий \t\n";
 
         public Form1()
@@ -67,8 +67,8 @@ namespace WindowsFormsTest
         public void StreamConnekt()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); // Создаем тип сокета с настройками соединения
-            buffer = new byte[10000]; // временый буфер
-            stream = new MemoryStream(buffer);
+            
+            stream = new MemoryStream();
 
             try
             {
@@ -103,7 +103,8 @@ namespace WindowsFormsTest
             {
                 pictureBox1.Image.Save(stream,System.Drawing.Imaging.ImageFormat.Png); // указываем в какой поток сохранить из pictureBox1 и в какой форматте
                 // так как стрим связан с буфером. до данные будут в нем.
-                socket.Send(buffer);
+                buffer = stream.ToArray(); // временый буфер  записываем нужный размер из стрима
+                socket.Send(buffer); // отправка через сокет
             }
         }
 

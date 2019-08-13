@@ -26,7 +26,10 @@ namespace WindowsFormsTestServer2
 
         public Form1()
         {
-            ListenonnnetServer();
+            // ListenonnnetServer();
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); // Создаем тип сокета с настройками соединения
+            buffer = new byte[100000]; // временый буфер
+            stream = new MemoryStream(buffer);
             EnableFileServer();
 
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace WindowsFormsTestServer2
         private void ListenonnnetServer()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); // Создаем тип сокета с настройками соединения
-            buffer = new byte[10000]; // временый буфер
+            buffer = new byte[100000]; // временый буфер
             stream = new MemoryStream(buffer);
         }
 
@@ -48,7 +51,7 @@ namespace WindowsFormsTestServer2
         private void EnableFileServer()
         {
             socket.Bind(new IPEndPoint(IPAddress.Any, port)); // создаем току соединения
-            socket.Listen(5);
+            socket.Listen(10);
         }
 
         /// <summary>
@@ -58,6 +61,10 @@ namespace WindowsFormsTestServer2
         {
             socket.Accept(); // создание подклчение и запуска нового сокета
             label1.Text = "Соединение установленно";
+           
+            socket.Receive(buffer);
+            label1.Text = "Новые данные получены";
+            pictureBox1.Image = Image.FromStream(stream);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -75,9 +82,9 @@ namespace WindowsFormsTestServer2
         //Получение файла
         private void Form1_Load(object sender, EventArgs e)
         {
-            socket.Receive(buffer);
-            label1.Text = "Новые данные получены";
-            pictureBox1.Image = Image.FromStream(stream);
+            //socket.Receive(buffer);
+            //label1.Text = "Новые данные получены";
+            //pictureBox1.Image = Image.FromStream(stream);
           //  stream.Close();
         }
     }

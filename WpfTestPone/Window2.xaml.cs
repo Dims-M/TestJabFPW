@@ -19,31 +19,32 @@ namespace WpfTestPone
     /// </summary>
     public partial class Window2 : Window
     {
-        
+        string temSizeGrid = "";
         public Window2()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
         }
 
-        List<string> testList = new List<string>() {"Bdgtvt","servwcc","vhryhtyhcwect" };
-        List<string> testList1 = new List<string>() {"Bdgtvt","servwcc","vhryhtyhcwect" };
-        List<string> testList2 = new List<string>() {"Bdgtvt","servwcc","vhryhtyhcwect" };
-        List<string> testList3 = new List<string>();
-        
-
-
-        //метод при загрузке 
+               //метод при загрузке 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // throw new NotImplementedException();
-            testList3.AddRange(testList);
-            testList3.AddRange(testList1);
-            testList3.AddRange(testList2);
+             temSizeGrid = $"Ширина:{MyGrid.ActualWidth}, Высота {MyGrid.ActualHeight}\t\n ";
+            // lbMain.ItemsSource = testList3; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
+            //lbMain.ItemsSource = new[] { new { lastName ="Иванов", firstName ="Ияван" },
+            //                             new { lastName ="Петров", firstName ="Петр"},
+            //                             new { lastName ="Сидоров", firstName ="Сидр"},
+            //                             new { lastName ="кнремлке", firstName ="сумнрр" }
 
-           // lbMain.ItemsSource = testList3; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
-            lbMain.ItemsSource = new[] { new { lastName ="Иванов", firstName ="Ияван" },
-                                         new { lastName ="Петров", firstName ="Петр" }}; // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из колекции
+            //                                                                          }; 
+            // присваеваем в лист бокс с помощью имени листа через свойсто ресурсы lbMain.ItemsSource данные из любой колекции.
+        }
+
+        //Кнопка при нажатии выход
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(temSizeGrid);
+            Close();
         }
     }
 }
