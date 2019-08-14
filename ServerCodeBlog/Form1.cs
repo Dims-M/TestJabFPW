@@ -16,15 +16,17 @@ namespace ServerCodeBlog
     public partial class Form1 : Form
     {
         //Переменные
-        const string ip = "192.168.0.45";
+        const string ip = "192.168.1.78"; // д 192.168.0.45
         const int port = 19132;
 
-        IPEndPoint tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip),port); //Точка подключения с серверу. могуть быть несколько
-        Socket tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream,ProtocolType.Tcp); // точка подключения между программами.
-        
+        IPEndPoint tcpEndPoint;
+        Socket tcpSocket;
 
         public Form1()
         {
+            tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port); //Точка подключения с серверу. могуть быть несколько
+            tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); // точка подключения между программами.
+
             InitializeComponent();
         }
 
