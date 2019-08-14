@@ -24,6 +24,8 @@ namespace ClientCodeBlog
 
         string log = "Журнал событий \t\n";
 
+        
+
         public Form1()
         {
             tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port); //Точка подключения с серверу. могуть быть несколько
@@ -35,6 +37,10 @@ namespace ClientCodeBlog
         //кнопка выход
         private void Button1_Click(object sender, EventArgs e)
         {
+            //IPEndPoint tcpEndPoint2 = new IPEndPoint(IPAddress.Parse(ip), port);
+            //var data = Encoding.UTF8.GetBytes("Отключение клиента");
+            //tcpSocket.Connect(tcpEndPoint2);
+            //tcpSocket.Send(data); //отправка сообщения
             tcpSocket.Shutdown(SocketShutdown.Both); //двухстроние закрытие соединение. на снервере и на клиенте
             tcpSocket.Close();
             Close();
@@ -67,6 +73,7 @@ namespace ClientCodeBlog
 
             //подключение(открытие) сокета/ Через точку доступа tcpEndPoint. Подключаемся как клиент в режиме слушателя
             tcpSocket.Connect(tcpEndPoint);
+          //  tcpSocket.BeginConnect(tcpEndPoint, new AsyncCallback(Async_Send_Receive.Connect_Callback), tcpSocket);
             tcpSocket.Send(data); //отправка сообщения
 
             var buffer = new byte[256]; // массив буфера
@@ -83,7 +90,7 @@ namespace ClientCodeBlog
             log += answer.ToString();  // сохраняем полученное сообщение
 
             Invoke((MethodInvoker)delegate { label1.Text = log; ; }); //вывод в лабел минуя ошибку 
-
+           
            // tcpSocket.Shutdown(SocketShutdown.Both); //двухстроние закрытие соединение. на снервере и на клиенте
            // tcpSocket.Close();
         }
