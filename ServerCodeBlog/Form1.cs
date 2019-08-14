@@ -37,7 +37,7 @@ namespace ServerCodeBlog
 
             //Раббота с протоколом UDP
             updEndPoint = new IPEndPoint(IPAddress.Parse(ip),port);
-            upTcpSocket = new Socket(AddressFamily.InterNetworkV6,SocketType.Stream,ProtocolType.Udp);
+            upTcpSocket = new Socket(AddressFamily.InterNetworkV6,SocketType.Dgram,ProtocolType.Udp);
 
             InitializeComponent();
         }
