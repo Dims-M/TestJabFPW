@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsTestServer2", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerCodeBlog", "ServerCodeBlog\ServerCodeBlog.csproj", "{65244064-6BC4-44B2-B3B7-28FDCD42A480}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCodeBlog", "ClientCodeBlog\ClientCodeBlog.csproj", "{B388F63A-9BC2-47BB-9BC2-60382F86843A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{65244064-6BC4-44B2-B3B7-28FDCD42A480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65244064-6BC4-44B2-B3B7-28FDCD42A480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65244064-6BC4-44B2-B3B7-28FDCD42A480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B388F63A-9BC2-47BB-9BC2-60382F86843A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B388F63A-9BC2-47BB-9BC2-60382F86843A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B388F63A-9BC2-47BB-9BC2-60382F86843A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B388F63A-9BC2-47BB-9BC2-60382F86843A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

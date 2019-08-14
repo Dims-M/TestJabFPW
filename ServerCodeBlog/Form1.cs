@@ -52,7 +52,7 @@ namespace ServerCodeBlog
             tcpSocket.Bind(tcpEndPoint); // Связка точки доступа и сокета
             tcpSocket.Listen(5); // запус состояния прошлушивания
 
-            while (true)
+            while (true) //TODO можно реализовывать проверку спомощью булевой переменной
             {
                 var listener = tcpSocket.Accept(); // прошлушка сокета и при подключении создание нового скета для ответа
                 var buffer = new byte[256]; // массив буфера
@@ -65,9 +65,15 @@ namespace ServerCodeBlog
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size)); // добавляем полученые через сокет  раскадированное данные из бкфера
                 }
                 while (listener.Available > 0); // если полученные данные еще есть. цикл работает
-               
 
+                label1.Text = data.ToString(); //выводим полученную инфу
 
+                //Текущие сообщение сообщает об успешном соединении. В принципе можно отправлять и другие сообщения
+                listener.Send(Encoding.UTF8.GetBytes("Успех")); //отправка сообщение через сокет. 
+
+                //двухстроние закрытие соединение. на снервере и на клиенте
+                listener.Shutdown(SocketShutdown.Both);
+                listener.Close(); //физическое закрытие обьекта 
             }
         }
     }
