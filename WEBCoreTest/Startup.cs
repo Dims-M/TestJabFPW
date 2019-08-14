@@ -30,7 +30,7 @@ namespace WEBCoreTest
         public void ConfigureServices(IServiceCollection services)
         {
             string con = "Server=(localdb)\\mssqllocaldb;Database=usersdbstore;Trusted_Connection=True;MultipleActiveResultSets=true";
-           // services.AddDbContext<UsersContext>(options => options.UseSqlServer(con));
+            services.AddDbContext<UsersContext>(options => options.UseSqlServer(con));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

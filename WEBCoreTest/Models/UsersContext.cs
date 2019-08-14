@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WEBCoreTest.Models
 {
-    public class UsersContext
+    public class UsersContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public UsersContext(DbContextOptions<UsersContext> options)
