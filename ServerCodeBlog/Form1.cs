@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace ServerCodeBlog
 {
     //https://www.youtube.com/watch?v=ZRGgBtUgJKE&t=1518s
+    //https://metanit.com/sharp/net/4.1.php
     public partial class Form1 : Form
     {
         //Переменные
@@ -22,7 +23,9 @@ namespace ServerCodeBlog
         const int port = 19132;
 
         IPEndPoint tcpEndPoint;
+        IPEndPoint updEndPoint;
         Socket tcpSocket;
+        Socket upTcpSocket;
         Socket listener;
 
         string log = "Журнал событий \t\n";
@@ -31,6 +34,10 @@ namespace ServerCodeBlog
         {
             tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port); //Точка подключения с серверу. могуть быть несколько
             tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); // точка подключения между программами.
+
+            //Раббота с протоколом UDP
+            updEndPoint = new IPEndPoint(IPAddress.Parse(ip),port);
+            upTcpSocket = new Socket(AddressFamily.InterNetworkV6,SocketType.Stream,ProtocolType.Udp);
 
             InitializeComponent();
         }
@@ -47,7 +54,7 @@ namespace ServerCodeBlog
         //Методы
 
         /// <summary>
-        /// Инициализатор поле и переменных
+        /// Инициализатор поле и переменных в формате TCP
         /// </summary>
         public void InisalizaorFild()
         {   // режим ожидания
@@ -92,6 +99,15 @@ namespace ServerCodeBlog
 
              
         }
+
+        /// <summary>
+        /// Метод запуска сокета в формате передачи UPD
+        /// </summary>
+        public void InisalizatorUPD()
+        {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+        }
+
 
         //Кнопка выход
         private void Button1_Click(object sender, EventArgs e)

@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace ClientCodeBlog
 {
+    //https://www.youtube.com/watch?v=ZRGgBtUgJKE&t=1518s
+    //https://metanit.com/sharp/net/4.1.php
     public partial class Form1 : Form
     {
         //Переменные
@@ -37,10 +39,6 @@ namespace ClientCodeBlog
         //кнопка выход
         private void Button1_Click(object sender, EventArgs e)
         {
-            //IPEndPoint tcpEndPoint2 = new IPEndPoint(IPAddress.Parse(ip), port);
-            //var data = Encoding.UTF8.GetBytes("Отключение клиента");
-            //tcpSocket.Connect(tcpEndPoint2);
-            //tcpSocket.Send(data); //отправка сообщения
             tcpSocket.Shutdown(SocketShutdown.Both); //двухстроние закрытие соединение. на снервере и на клиенте
             tcpSocket.Close();
             Close();
@@ -94,5 +92,7 @@ namespace ClientCodeBlog
            // tcpSocket.Shutdown(SocketShutdown.Both); //двухстроние закрытие соединение. на снервере и на клиенте
            // tcpSocket.Close();
         }
+
+
     }
 }
