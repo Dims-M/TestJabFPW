@@ -9,6 +9,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ServerCodeBlog
 {
@@ -21,6 +23,8 @@ namespace ServerCodeBlog
 
         IPEndPoint tcpEndPoint;
         Socket tcpSocket;
+
+        string log = "Журнал событий \t\n";
 
         public Form1()
         {
@@ -37,9 +41,10 @@ namespace ServerCodeBlog
         }
 
         //При загрузке формы
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+            await Task.Run(() => InisalizaorFild());
+            //InisalizaorFild();
         }
 
         //Методы
@@ -51,6 +56,9 @@ namespace ServerCodeBlog
         {   // режим ожидания
             tcpSocket.Bind(tcpEndPoint); // Связка точки доступа и сокета
             tcpSocket.Listen(5); // запус состояния прошлушивания
+            log += "Запущен сокет на прошлушку \t\n";
+
+            Invoke((MethodInvoker)delegate { label1.Text = log; ; }); // загружаем в таблицу данные полученнфые из листа
 
             while (true) //TODO можно реализовывать проверку спомощью булевой переменной
             {
@@ -59,12 +67,17 @@ namespace ServerCodeBlog
                 var size = 0;
                 var data = new StringBuilder();
 
+                
+
                 do // проверяем условие о получили запрос
                 {
                     size = listener.Receive(buffer); // полученно все байти сообщения. Маскимальное  
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size)); // добавляем полученые через сокет  раскадированное данные из бкфера
+                    log += "Полечены данные от клиента \t\n";
                 }
                 while (listener.Available > 0); // если полученные данные еще есть. цикл работает
+
+                Invoke((MethodInvoker)delegate { label1.Text = data.ToString(); ; }); // загружаем в таблицу данные полученнфые из листа
 
                 label1.Text = data.ToString(); //выводим полученную инфу
 
@@ -74,6 +87,9 @@ namespace ServerCodeBlog
                 //двухстроние закрытие соединение. на снервере и на клиенте
                 listener.Shutdown(SocketShutdown.Both);
                 listener.Close(); //физическое закрытие обьекта 
+                log += "Закрытие соединение \t\n";
+                Invoke((MethodInvoker)delegate { label1.Text = log; ; }); //вывод в лабел минуя ошибку 
+
             }
         }
     }
