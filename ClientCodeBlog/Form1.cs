@@ -21,6 +21,8 @@ namespace ClientCodeBlog
         IPEndPoint tcpEndPoint;
         Socket tcpSocket;
 
+        string log = "Журнал событий \t\n";
+
         public Form1()
         {
             tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port); //Точка подключения с серверу. могуть быть несколько
@@ -42,15 +44,23 @@ namespace ClientCodeBlog
         }
 
         //При загрузке формы
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+            await Task.Run(() => InicializatorClienta());
         }
 
         //Методы
-
-        public void Inicializator()
+        public void InicializatorClienta()
         {
+            string dateTime = DateTime.Now.ToString();
+            string message = $"{dateTime}\t\nСообщение:{textBox1.Text}"; //  тело сообщенияя
+
+            var data = Encoding.UTF8.GetBytes(message); // кодировка сообщение в байты. переод отправкой серверу
+
+            //подключение(открытие) сокета/ Через точку доступа tcpEndPoint. Подключаемся как клиент в режиме слушателя
+            tcpSocket.Connect(tcpEndPoint);
+            tcpSocket.Send(data); //отправка сообщения
+
 
         }
     }
