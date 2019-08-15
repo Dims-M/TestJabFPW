@@ -37,7 +37,11 @@ namespace ServerCodeBlog
 
             //Раббота с протоколом UDP
             updEndPoint = new IPEndPoint(IPAddress.Parse(ip),port);
+            //натсройка сокета для работы по  протоколу UDP
             upTcpSocket = new Socket(AddressFamily.InterNetworkV6,SocketType.Dgram,ProtocolType.Udp);
+
+            upTcpSocket.Bind(updEndPoint); // связка точки доступа и сокета
+
 
             InitializeComponent();
         }
@@ -105,7 +109,9 @@ namespace ServerCodeBlog
         /// </summary>
         public void InisalizatorUPD()
         {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+            var buffer = new byte[256]; // массив буфера
+            var size = 0;
+            var data = new StringBuilder();
         }
 
 
