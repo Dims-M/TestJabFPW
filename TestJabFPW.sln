@@ -19,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerCodeBlog", "ServerCod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCodeBlog", "ClientCodeBlog\ClientCodeBlog.csproj", "{B388F63A-9BC2-47BB-9BC2-60382F86843A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBCoreTest", "WEBCoreTest\WEBCoreTest.csproj", "{61F68A6D-625A-457F-B0B6-C70937147DBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEBCoreTest", "WEBCoreTest\WEBCoreTest.csproj", "{61F68A6D-625A-457F-B0B6-C70937147DBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "..\Print_client_details\ConsoleApp\ConsoleApp.csproj", "{7C4A4A6F-92B5-4B50-82B2-0A94A460DCFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{61F68A6D-625A-457F-B0B6-C70937147DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F68A6D-625A-457F-B0B6-C70937147DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F68A6D-625A-457F-B0B6-C70937147DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4A4A6F-92B5-4B50-82B2-0A94A460DCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4A4A6F-92B5-4B50-82B2-0A94A460DCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4A4A6F-92B5-4B50-82B2-0A94A460DCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4A4A6F-92B5-4B50-82B2-0A94A460DCFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
