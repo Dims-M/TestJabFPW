@@ -16,6 +16,7 @@ namespace ServerCodeBlog
 {
     //https://www.youtube.com/watch?v=ZRGgBtUgJKE&t=1518s
     //https://metanit.com/sharp/net/4.1.php
+
     public partial class Form1 : Form
     {
         //Переменные
