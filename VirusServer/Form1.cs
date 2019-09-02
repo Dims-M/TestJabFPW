@@ -20,7 +20,7 @@ namespace VirusServer
     //https://www.youtube.com/watch?v=ZRGgBtUgJKE&t=1290s
     // https://habr.com/ru/post/462379/
     //https://habr.com/ru/hub/net/
-    //192.168.0.45 порт 19132
+    //192.168.0.45 порт 19132 буинск 46.52.172.103  192.168.1.61
     public partial class Form1 : Form
     {
         public Thread refreshThread; // отдельный поток
